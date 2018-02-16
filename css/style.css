@@ -1,0 +1,121 @@
+#ukryty {
+    display: none;
+}
+
+#kontener > .inner {
+    display: inline-block;
+    height: 300px;
+    width: 33%;
+    background-color: red;
+}
+
+/*float-clear*/
+
+#floated > .inner {
+    width: 300px;
+    height: 300px;
+    display: inline-block;
+    float: left;
+    background-color: red;
+    transition: all 2s;
+    /*
+    transition-property: all;
+    transition-duration: 2s;
+    transition-timing-function: ease;
+*/
+    /*
+    1. jakie wlasciwosci
+    2. jaki czas.
+    3. efekt animacji (opcjonalnie)
+    4. czas opoznienia (opcjonalnie)
+*/
+}
+
+#floated > .inner:hover {
+    width: 600px;
+    background-color: green;
+}
+
+/*obsluga tranzycji w 2 strony musimy ustawic element przed hoverem*/
+
+#floated > .clear {
+    clear: both;
+}
+
+#tlo {
+    height: 500px;
+    background-image: url('http://www.rrclub.pl/picture/upload/ed1-08_kat6_Was_2.jpg');
+    background-repeat: no-repeat;
+    /*    kiedy dla background-position nie ustawimy drugiej wartosci, jes ona domyslnie ustawiona na "center". pierwsza wartosc odnosi sie zawsze do osi ox */
+    background-position: center;
+    background-size: cover;
+    /*    url*/
+}
+
+/*overflow*/
+
+#przepelnienie {
+    width: 100px;
+    height: 100px;
+    border: 2px dashed #000;
+    overflow: scroll;
+}
+
+
+#rotacja,
+#przesuniecie,
+#skalowanie,
+#animowany{
+    background: url('https://reporters.pl/wp-content/uploads/2016/06/czolg_Rosja.jpg') no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+    margin-bottom: 10px;
+    transition: all 1s;
+    
+}
+
+#transformacje {
+    overflow:hidden;
+}
+
+#rotacja:hover {
+    transform: rotate(360deg);
+}
+
+#przesuniecie:hover {
+    transform: translate(50%, 50%);
+}
+
+#skalowanie:hover {
+    transform: scale(2);
+}
+
+/*animacje*/
+#animowany {
+    animation-name: rotuj;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+@keyframes rotuj {
+/*
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+*/
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+    50% {
+       transform: rotate(180deg) scale(1.5); 
+    }
+    100% {
+        transform: rotate(0deg) scale(1);
+    }
+
